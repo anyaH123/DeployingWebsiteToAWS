@@ -5,7 +5,7 @@
 create package.json: npm init -y
 
 # DeployingWebsiteToAWSUI
-
+create react app: npx create-react-app deploying_website_to_aws_ui
 
 
 # DockerImages
