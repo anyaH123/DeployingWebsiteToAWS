@@ -1,11 +1,13 @@
 import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
-const ProductOverview  = () => {
+const ProductOverview = () => {
+  const navigate = useNavigate();
   return (
     <div>
-       <Button as="a" variant="primary" onClick={() => {alert("You clicked the button");}}>
-            Bootstrap Button
-        </Button>
+      <Button as="a" variant="primary" onClick={() => navigate('/products')}>
+        Browse Products
+      </Button>
     </div>
   );
 }
