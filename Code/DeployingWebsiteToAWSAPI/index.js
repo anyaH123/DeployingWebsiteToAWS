@@ -1,12 +1,20 @@
 var fs = require('fs');
 const axios = require('axios');
 const express = require('express'); // Importing express module 
-
+var cors = require('cors');
 const app = express(); // Creating an express object 
 
 const port = 8080;  // Setting an port for this application 
 
+app.use(cors());
 
+app.use(function(req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+});
 
 // Starting server using listen function 
 app.listen(port, function (err) {

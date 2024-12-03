@@ -1,0 +1,1 @@
+export const ProductAPIBaseUrl = "http://localhost:8080";
