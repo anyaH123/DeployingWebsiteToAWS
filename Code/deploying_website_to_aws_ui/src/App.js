@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProductOverview from "./Products/ProductOverview";
 import Products from "./Products/ProductsDetails";
 import productsStore from "./Redux/Store";
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
 
 function App() {
   return (
