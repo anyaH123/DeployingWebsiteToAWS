@@ -1,16 +1,19 @@
 import {Provider} from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {Container} from "react-bootstrap";
 import ProductOverview from "./Products/ProductOverview";
 import Products from "./Products/ProductsDetails";
 import productsStore from "./Redux/Store";
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 
 function App() {
   return (
     <Provider store={productsStore}>
-      <div className="App">
-        <p>Hi this is the test website</p>
+      <Container fluid className="App bg-body-tertiary" style={{height: "100vh"}}>
+        <Header></Header>
         <BrowserRouter>
           <Routes>
             <Route path="/" >
@@ -20,7 +23,8 @@ function App() {
             </Route>
           </Routes>
         </BrowserRouter>
-      </div>
+        <Footer></Footer>
+      </Container>
     </Provider>
   );
 }
