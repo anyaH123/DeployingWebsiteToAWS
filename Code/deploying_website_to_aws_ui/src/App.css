@@ -101,3 +101,16 @@
     height: 300px;
     border-radius: 21px 21px 0 0;
 }
+
+.product-title {
+    color: #FFFFFF;
+    text-align: center;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.card-body{
+    background-color: #000000;
+    color: #FFFFFF;
+    height: 100px;
+}

@@ -4,6 +4,7 @@ import { UpdateProducts } from "../Redux/Action";
 import { ProductAPIBaseUrl } from "../Utils/Constant";
 import LoadingIndicator from "./LoadingIndicator";
 import axios from "axios";
+import Card from 'react-bootstrap/Card';
 
 function Products(props) {
     const { products, UpdateProducts } = props;
@@ -31,12 +32,27 @@ function Products(props) {
         {isLoading && <LoadingIndicator></LoadingIndicator>}
         {products && products.length > 0 ?
             <>
-                this is the list of products
-                {products.map((product) => {
-                    return <>
-                    <p>Name: {product.name}</p>
-                    </>
-                })}
+                <h6 className="display-4 font-weight-normal product-title">
+                    Product List
+                </h6>
+                <div className="container">
+                    <div className="row">
+                        {products.map((product) => {
+                            return <>
+                                <div className="col-md-3" style={{ paddingBottom: '20px' }}>
+                                    <Card>
+                                        <Card.Body className="card-body">
+                                            <Card.Title>{product.name}</Card.Title>
+                                            <Card.Text>
+                                                {product && product.data && product.data.color && product.data.color}
+                                            </Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </div>
+                            </>
+                        })}
+                    </div>
+                </div>
             </> :
             <>
                 {!isLoading &&
